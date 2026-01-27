@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
-def members(request):
-    return HttpResponse("Welcome to the Members Page!")
+def athlete(request):
+    template = loader.get_template('first.html')
+    return HttpResponse(template.render())
 
-# Create your views here.
+# Create your views he
