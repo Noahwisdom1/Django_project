@@ -1,0 +1,18 @@
+{% extends "members/master.html" %}
+
+{% block title %}
+    My First Django Project - Members List
+{% endblock %}
+
+{% block content %}
+
+    <p><a href="/">Home<a/></p>
+        
+    <h1>Welcome to My First Django Project!</h1>
+
+    <ul>
+        {% for x in mymembers %}
+            <li><a href="details/{{ x.id }}">{{ x.name }} {{ x.email }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

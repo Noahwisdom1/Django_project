@@ -1,9 +1,21 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render, get_object_or_404
+from .models import Member, Meta
 
 def athlete(request):
-    template = loader.get_template('first.html')
-    return HttpResponse(template.render())
+    return render(request, 'members/athlete.html')
 
-# Create your views he
+def first(request):
+    mymembers = Member.objects.all().values()
+    return render(request, 'members/first.html', {'mymembers': mymembers})
+
+def details(request, id):
+    mymember = get_object_or_404(Member, id=id)
+    return render(request, 'members/details.html', {'mymember': mymember})
+
+def main(request):
+    return render(request, 'members/main.html')
+
+def testing(request):
+    text = ['Apple', 'Banana', 'Cherry']
+    return render(request, 'members/template.html', {'text': text})
+# Create your views here.
