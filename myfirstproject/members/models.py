@@ -8,7 +8,7 @@ class Member(models.Model):
 
    
     def __str__(self):
-        return self.name
+        return f"{self.name} {self.email}"
     
 class Meta(models.Model):
     car = models.CharField(max_length=100)
@@ -16,7 +16,7 @@ class Meta(models.Model):
     release_date = models.DateField()
 
     def __str__(self):
-        return self.car  # Fixed: was referencing self.name which doesn't exist
+        return f"{self.car} {self.country}"  # Fixed: was referencing self.name which doesn't exist
 
 
 # Create your models here.
