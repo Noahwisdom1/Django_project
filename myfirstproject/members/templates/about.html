@@ -1,0 +1,45 @@
+{% extends "master.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="display-4 text-center mb-4">About Our Project</h1>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3>Welcome to MyFirstProject</h3>
+                    <p class="lead">
+                        This is a Django web application designed to demonstrate the core features 
+                        of web development with Python and Django framework.
+                    </p>
+                    
+                    <h4>What We Do</h4>
+                    <ul>
+                        <li><strong>Member Management:</strong> Store and manage member information including names, emails, cities, and countries</li>
+                        <li><strong>User Authentication:</strong> Secure login and registration system</li>
+                        <li><strong>Member Directory:</strong> Browse and view detailed member profiles</li>
+                        <li><strong>Modern UI:</strong> Clean, responsive design using Bootstrap</li>
+                    </ul>
+                    
+                    <h4>Technology Stack</h4>
+                    <p>Built with:</p>
+                    <ul>
+                        <li>Django 6.0.1 - Python web framework</li>
+                        <li>SQLite - Database for development</li>
+                        <li>Bootstrap 5 - Frontend styling</li>
+                        <li>HTML5 & CSS3 - Modern web standards</li>
+                    </ul>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'main' %}" class="btn btn-primary">Back to Home</a>
+                        <a href="{% url 'members_list' %}" class="btn btn-outline-secondary">View Members</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
