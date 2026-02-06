@@ -10,8 +10,8 @@ def first(request):
     mymembers = Member.objects.all().values()
     return render(request, 'first.html', {'mymembers': mymembers})
 
-def details(request, id):
-    mymember = get_object_or_404(Member, id=id)
+def details(request, slug):
+    mymember = get_object_or_404(Member, slug=slug)
     return render(request, 'details.html', {'mymember': mymember})
 
 def main(request):

@@ -1,11 +1,17 @@
 from django.db import models
+from django.utils.text import slugify
 
 class Member(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)
+    slug = models.SlugField(unique=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
    
     def __str__(self):
         return f"{self.name} {self.email}"

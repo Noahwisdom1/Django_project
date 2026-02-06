@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'members'
+    'members',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -116,11 +117,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
+
 STATIC_URL = 'static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    BASE_DIR / "members/static",
+    BASE_DIR / 'mystaticfiles'
 ]
 
 # Login/Logout redirect settings

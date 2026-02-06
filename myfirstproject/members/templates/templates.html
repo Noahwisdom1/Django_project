@@ -1,13 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<body>
-<ul>
-  {% for x in mymembers %}
-    <li>Hello {{ x.firstname }}</li>
-  {% endfor %}
-</ul>
 
-<p>In views.py you can see what the fruits variable looks like.</p>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+
+<body>
+  <ul>
+    {% for x in mymembers %}
+    <li>Hello {{ x.firstname }}</li>
+    {% endfor %}
+  </ul>
+  <div class="container">
+    <ul class="nav bg-info">
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/members">MEMBERS</a>
+      </li>
+    </ul>
+
+    {% block content %}
+    {% endblock %}
+  </div>
+  <h1>Wizard</h1>
+  <h2>Somtoo you will cry</h2>
+  <p>In myglobal.css you can see what the stylesheet looks like.</p>
 
 </body>
+
 </html>

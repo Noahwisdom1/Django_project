@@ -3,7 +3,8 @@ from . models import Member, Meta
 
 # Register your models here.
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'city', 'country')
+    list_display = ('name', 'email', 'city', 'country',)
+    prepopulated_fields = {"slug": ("name", "email")}
 
 class MetaAdmin(admin.ModelAdmin):
     list_display = ('car', 'country', 'release_date')

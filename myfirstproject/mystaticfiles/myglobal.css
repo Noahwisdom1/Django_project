@@ -1,0 +1,15 @@
+body {
+    background-color: lightblue;
+    color: violet;
+    font-size: 2rem;
+
+}
+h1 {
+    font-size: xx-large;
+    color: darkred;
+    font-weight: bold;
+}
+p {
+    font-size: x-large;
+    font-style: initial;
+}
